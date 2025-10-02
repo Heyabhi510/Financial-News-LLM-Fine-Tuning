@@ -10,7 +10,6 @@ class ModelTrainer:
         self.tokenizer = tokenizer
     
     def get_training_args(self):
-        """Your existing training arguments"""
         return TrainingArguments(
             output_dir=str(paths.TRAINED_MODEL),
             seed=config.SEED,
