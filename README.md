@@ -120,4 +120,4 @@ Fine-tuned Gemma-4B	    78.6%	    0.77	    0.79	    0.76
 # 🙏 Acknowledgments
 - HuggingFace for the <a href='https://github.com/huggingface/transformers'>Transformers</a> and <a href='https://github.com/huggingface/peft'>PEFT</a> libraries
 - Google for releasing <a href='https://huggingface.co/google/gemma-3-4b-it'>Gemma models</a>
-- <a href='https://www.researchgate.net/publication/251231364_FinancialPhraseBank-v10'>Financial PhraseBank</a> dataset creators
+- <a href='[https://www.researchgate.net/publication/251231364_FinancialPhraseBank-v10](https://www.kaggle.com/datasets/ankurzing/sentiment-analysis-for-financial-news)'>Financial PhraseBank</a> dataset creators
