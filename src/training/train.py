@@ -28,7 +28,8 @@ class ModelTrainer:
             gradient_checkpointing=True,
             optim="paged_adamw_8bit",
             remove_unused_columns=False,
-            dataloader_pin_memory=False
+            dataloader_pin_memory=False,
+            max_length=config.MAX_SEQ_LENGTH
         )
     
     def create_trainer(self, train_dataset, eval_dataset):
@@ -42,7 +43,6 @@ class ModelTrainer:
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             peft_config=peft_config,
-            model_max_length=config.MAX_SEQ_LENGTH,
             dataset_text_field="formatted_text",
             packing=False
         )
