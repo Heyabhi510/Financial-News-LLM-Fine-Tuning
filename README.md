@@ -40,17 +40,17 @@ FINANCIAL-NEWS-LLM-FINE-TUNING/
 
 
 ## 🚀 How to Run
-### Clone repository
-git clone https://github.com/Heyabhi510/Financial-News-LLM-Fine-Tuning.git
+### 1) Clone repository
+git clone https://github.com/Heyabhi510/Financial-News-LLM-Fine-Tuning.git \
 cd Financial-News-LLM-Fine-Tuning
 
-### Install dependencies
+### 2) Install dependencies
 pip install -r requirements.txt
 
-### Setup Hugging Face token
+### 3) Setup Hugging Face token
 export HF_Token="your_huggingface_token"
 
-### Run the complete training pipeline
+### 4) Run the complete training pipeline
 python src/scripts/train_model.py
 
 
