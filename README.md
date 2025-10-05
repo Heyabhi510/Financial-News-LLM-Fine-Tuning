@@ -17,7 +17,7 @@ This project demonstrates **end-to-end fine-tuning** of a large language model (
 
 
 ## 📁 Project Structure
-FINANCIAL NEWS LLM FINE-TUNING/
+FINANCIAL-NEWS-LLM-FINE-TUNING/
 | Directory | File | Description |
 |-----------|------|-------------|
 | **src/** | | **Source Code Root** |
