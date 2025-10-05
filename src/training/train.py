@@ -41,9 +41,7 @@ class ModelTrainer:
             args=training_args,
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
-            peft_config=peft_config,
-            dataset_text_field="formatted_text",
-            packing=False
+            peft_config=peft_config
         )
         
         return trainer
