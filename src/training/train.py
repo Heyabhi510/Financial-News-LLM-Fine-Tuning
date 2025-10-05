@@ -42,7 +42,7 @@ class ModelTrainer:
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             peft_config=peft_config,
-            max_seq_length=config.MAX_SEQ_LENGTH,
+            model_max_length=config.MAX_SEQ_LENGTH,
             dataset_text_field="formatted_text",
             packing=False
         )
