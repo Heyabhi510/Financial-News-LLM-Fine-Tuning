@@ -20,11 +20,16 @@ class ModelTrainer:
             warmup_ratio=config.WARMUP_RATIO,
             max_grad_norm=config.MAX_GRAD_NORM,
             logging_steps=25,
-            eval_steps=112,
+            eval_steps=100,
             evaluation_strategy="steps",
-            save_strategy="no",
+            save_strategy="steps",
+            save_steps=200,
             report_to="tensorboard",
             bf16=True,
+            gradient_checkpointing=True,
+            optim="paged_adamw_8bit",
+            remove_unused_columns=False,
+            dataloader_pin_memory=False
         )
     
     def create_trainer(self, train_dataset, eval_dataset):
@@ -40,7 +45,8 @@ class ModelTrainer:
             peft_config=peft_config,
             tokenizer=self.tokenizer,
             max_seq_length=config.MAX_SEQ_LENGTH,
-            dataset_text_field="text",
+            dataset_text_field="formatted_text",
+            packing=False
         )
         
         return trainer
