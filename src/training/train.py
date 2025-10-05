@@ -28,8 +28,7 @@ class ModelTrainer:
             gradient_checkpointing=True,
             optim="paged_adamw_8bit",
             remove_unused_columns=False,
-            dataloader_pin_memory=False,
-            max_length=config.MAX_SEQ_LENGTH
+            dataloader_pin_memory=False
         )
     
     def create_trainer(self, train_dataset, eval_dataset):
