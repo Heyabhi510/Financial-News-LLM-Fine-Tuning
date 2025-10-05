@@ -5,9 +5,8 @@ from config.hyperparameters import config
 from config.paths import paths
 
 class ModelTrainer:
-    def __init__(self, model, tokenizer):
+    def __init__(self, model):
         self.model = model
-        self.tokenizer = tokenizer
     
     def get_training_args(self):
         return TrainingArguments(
@@ -20,7 +19,7 @@ class ModelTrainer:
             warmup_ratio=config.WARMUP_RATIO,
             max_grad_norm=config.MAX_GRAD_NORM,
             logging_steps=25,
-            eval_steps=100,
+            eval_steps=112,
             eval_strategy="steps",
             save_strategy="steps",
             save_steps=200,
@@ -43,7 +42,6 @@ class ModelTrainer:
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
             peft_config=peft_config,
-            tokenizer=self.tokenizer,
             max_seq_length=config.MAX_SEQ_LENGTH,
             dataset_text_field="formatted_text",
             packing=False

@@ -1,5 +1,4 @@
 from datasets import Dataset
-from config.hyperparameters import config
 import pandas as pd
 
 class PromptEngineer:

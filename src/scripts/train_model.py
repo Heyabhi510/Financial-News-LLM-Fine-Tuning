@@ -47,7 +47,7 @@ def main():
         )
         
         # 5. Train model
-        trainer = ModelTrainer(model, tokenizer)
+        trainer = ModelTrainer(model)
         sft_trainer = trainer.create_trainer(train_data, eval_data)
         sft_trainer.train()
         
