@@ -21,7 +21,7 @@ class ModelTrainer:
             max_grad_norm=config.MAX_GRAD_NORM,
             logging_steps=25,
             eval_steps=100,
-            evaluation_strategy="steps",
+            eval_strategy="steps",
             save_strategy="steps",
             save_steps=200,
             report_to="tensorboard",
