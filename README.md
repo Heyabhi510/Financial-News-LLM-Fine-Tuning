@@ -115,7 +115,7 @@ python src/scripts/train_model.py
 ## 👨‍💻 Author
 ### Your Name
 - GitHub: <a href='https://github.com/Heyabhi510'>Heyabhi510</a>
-- LinkedIn: <a href='www.linkedin.com/in/abhi-s-thakkar'>Abhishek Thakkar</a>
+- LinkedIn: <a href='https://www.linkedin.com/in/abhi-s-thakkar'>Abhishek Thakkar</a>
 
 
 # 🙏 Acknowledgments
