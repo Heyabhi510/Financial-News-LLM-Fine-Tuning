@@ -32,6 +32,14 @@ class ModelTrainer:
         )
     
     def create_trainer(self, train_dataset, eval_dataset):
+        # Add dummy images column to dataset
+        def add_dummy_images(example):
+            example['images'] = None  # Add empty images
+            return example
+    
+        train_dataset = train_dataset.map(add_dummy_images)
+        eval_dataset = eval_dataset.map(add_dummy_images)
+        
         """Create SFTTrainer instance"""
         training_args = self.get_training_args()
         peft_config = get_lora_config()
