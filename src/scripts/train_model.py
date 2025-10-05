@@ -16,13 +16,14 @@ from models.setup import ModelSetup
 from training.train import ModelTrainer
 from evaluation.predictor import SentimentPredictor
 from evaluation.metrics import EvaluationMetrics
+from google.colab import userdata
 
 def main():
     # Setup
     paths.setup()
     
     # Hugging Face token
-    hf_token = "HF_Token"
+    hf_token = userdata.get("HF_Token")
     
     try:
         
