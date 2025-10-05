@@ -18,29 +18,38 @@ This project demonstrates **end-to-end fine-tuning** of a large language model (
 
 ## 📁 Project Structure
 FINANCIAL NEWS LLM FINE-TUNING
-├── src
-│   ├── config/                 # Configuration management
-│   │   ├── hyperparameters.py  # Training parameters
-│   │   └── paths.py            # File paths
-│   ├── data/                   # Data processing
-│   │   ├── loader.py           # Data loading & validation
-│   │   ├── preprocessor.py     # Prompt engineering
-│   │   └── splitter.py         # Train/test splitting
-│   ├── models/                 # Model architecture
-│   │   ├── setup.py            # Model & tokenizer initialization
-│   │   └── lora_config.py      # LoRA configuration
-│   ├── training/               # Training pipeline
-│   │   └── train.py            # Training configuration
-│   ├── evaluation/             # Model evaluation
-│   │   ├── metrics.py          # Performance metrics
-│   │   └── predictor.py        # Inference functions
-│   ├── scripts/                # Execution scripts
-│   │   └── train_model.py      # Main training script
-│   ├── outputs/                # Generated artifacts
-│   │   └── predictions/        # Prediction results
-│   │   ├── trained_models/     # Saved model weights
-├── requirements.txt            # Dependencies
-└── README.md
+│
+├── 📁 src/
+│ │
+│ ├── 📁 config/ # Configuration management
+│ │ ├── 📄 hyperparameters.py # Training parameters
+│ │ └── 📄 paths.py # File paths
+│ │
+│ ├── 📁 data/ # Data processing
+│ │ ├── 📄 loader.py # Data loading & validation
+│ │ ├── 📄 preprocessor.py # Prompt engineering
+│ │ └── 📄 splitter.py # Train/test splitting
+│ │
+│ ├── 📁 models/ # Model architecture
+│ │ ├── 📄 setup.py # Model & tokenizer initialization
+│ │ └── 📄 lora_config.py # LoRA configuration
+│ │
+│ ├── 📁 training/ # Training pipeline
+│ │ └── 📄 train.py # Training configuration
+│ │
+│ ├── 📁 evaluation/ # Model evaluation
+│ │ ├── 📄 metrics.py # Performance metrics
+│ │ └── 📄 predictor.py # Inference functions
+│ │
+│ ├── 📁 scripts/ # Execution scripts
+│ │ └── 📄 train_model.py # Main training script
+│ │
+│ └── 📁 outputs/ # Generated artifacts
+│ └── 📁 predictions/ # Prediction results
+│ └── 📁 trained_models/# Saved model weights
+│
+├── 📄 requirements.txt # Dependencies
+└── 📄 README.md
 
 
 # 🚀 How to Run
