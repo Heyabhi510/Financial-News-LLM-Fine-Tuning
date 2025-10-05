@@ -1,11 +1,11 @@
 # 🏦 Financial News Sentiment Analysis with Gemma-3-4B
 
-> Fine-tuning Google's Gemma-3-4B model for financial sentiment classification using **QLoRA (4-bit Quantized LoRA)** - achieving **77% accuracy** with only **0.2% trainable parameters**.
+> Fine-tuning Google's Gemma-3-4B model for financial sentiment classification using **QLoRA (4-bit Quantized LoRA)** - achieving **87.1% accuracy** with only **0.2% trainable parameters**.
 
 
 ## 📊 Project Overview
 
-This project demonstrates **end-to-end fine-tuning** of a large language model (Gemma-3B) for financial domain adaptation. The model is trained to analyze sentiment in financial news articles and classify them as **Positive, Negative, or Neutral**.
+This project demonstrates **end-to-end fine-tuning** of a large language model (Gemma-4B) for financial domain adaptation. The model is trained to analyze sentiment in financial news articles and classify them as **Positive, Negative, or Neutral**.
 
 
 ### 🎯 Key Features
@@ -17,48 +17,44 @@ This project demonstrates **end-to-end fine-tuning** of a large language model (
 
 
 ## 📁 Project Structure
-FINANCIAL NEWS LLM FINE-TUNING
-├── src
-│   ├── config/                 # Configuration management
-│   │   ├── hyperparameters.py  # Training parameters
-│   │   └── paths.py            # File paths
-│   ├── data/                   # Data processing
-│   │   ├── loader.py           # Data loading & validation
-│   │   ├── preprocessor.py     # Prompt engineering
-│   │   └── splitter.py         # Train/test splitting
-│   ├── models/                 # Model architecture
-│   │   ├── setup.py            # Model & tokenizer initialization
-│   │   └── lora_config.py      # LoRA configuration
-│   ├── training/               # Training pipeline
-│   │   └── train.py            # Training configuration
-│   ├── evaluation/             # Model evaluation
-│   │   ├── metrics.py          # Performance metrics
-│   │   └── predictor.py        # Inference functions
-│   ├── scripts/                # Execution scripts
-│   │   └── train_model.py      # Main training script
-│   ├── outputs/                # Generated artifacts
-│   │   └── predictions/        # Prediction results
-│   │   ├── trained_models/     # Saved model weights
-├── requirements.txt            # Dependencies
-└── README.md
+FINANCIAL-NEWS-LLM-FINE-TUNING/
+| Directory | File | Description |
+|-----------|------|-------------|
+| **src/** | | **Source Code Root** |
+| src/config/ | hyperparameters.py | Training parameters and configurations |
+| src/config/ | paths.py | File paths and directory management |
+| src/data/ | loader.py | Data loading, validation, and preprocessing |
+| src/data/ | preprocessor.py | Text cleaning and prompt engineering |
+| src/data/ | splitter.py | Train/validation/test data splitting |
+| src/models/ | setup.py | Model and tokenizer initialization |
+| src/models/ | lora_config.py | LoRA configuration and adapter setup |
+| src/training/ | train.py | Training loop and configuration |
+| src/evaluation/ | metrics.py | Performance metrics and evaluation |
+| src/evaluation/ | predictor.py | Inference and prediction functions |
+| src/scripts/ | train_model.py | Main training execution script |
+| src/outputs/ | | **Generated Artifacts** |
+| src/outputs/predictions/ | | Model prediction results |
+| src/outputs/predictions/trained_models/ | | Saved model weights and checkpoints |
+| **Root** | requirements.txt | Python dependencies |
+| **Root** | README.md | Project documentation |
 
 
-# 🚀 How to Run
-## Clone repository
-git clone https://github.com/Heyabhi510/Financial-News-LLM-Fine-Tuning.git
+## 🚀 How to Run
+### 1) Clone repository
+git clone https://github.com/Heyabhi510/Financial-News-LLM-Fine-Tuning.git \
 cd Financial-News-LLM-Fine-Tuning
 
-## Install dependencies
+### 2) Install dependencies
 pip install -r requirements.txt
 
-## Setup Hugging Face token
+### 3) Setup Hugging Face token
 export HF_Token="your_huggingface_token"
 
-## Run the complete training pipeline
+### 4) Run the complete training pipeline
 python src/scripts/train_model.py
 
 
-# 📦 Requirements
+## 📦 Requirements
 - torch>=2.0.0
 - transformers>=4.35.0
 - datasets>=2.14.0
@@ -74,54 +70,55 @@ python src/scripts/train_model.py
 - flash-attn>=2.0.0
 
 
-# 🚀 Performance Optimizations
-## Memory Efficiency
+## 🚀 Performance Optimizations
+### Memory Efficiency
 - 4-bit QLoRA: Reduces memory usage by 60%
 - Gradient Checkpointing: Trading compute for memory
 - Flash Attention 2: Faster attention computation
 - BF16 Precision: Better numerical stability
 
-## Training Speed
+### Training Speed
 - Paged AdamW 8-bit: Memory-efficient optimizer
 - Gradient Accumulation: Effective larger batches
 - Mixed Precision: BF16 training
 
 
-# 🔧 Technical Details
-## Model Architecture
+## 🔧 Technical Details
+### Model Architecture
 - Base Model: Google Gemma-4B
 - Fine-tuning Method: 4-bit QLoRA
 - Adapter Rank: 64
 - Target Modules: q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj
 
-## Training Configuration
+### Training Configuration
 - Batch Size: 8 (with gradient accumulation)
 - Learning Rate: 2e-4 (with cosine scheduler)
 - Epochs: 5
 - Max Sequence Length: 2048 tokens
 - Warmup Ratio: 0.03
 
-## Dataset
+### Dataset
 - Source: Financial PhraseBank
 - Size: 5,000 labeled samples
 - Classes: Positive, Negative, Neutral
 - Train/Val/Test Split per class: 300/50/300
 
 
-# 📈 Results
-## Performance Metrics
-Model	                Accuracy	F1-Score	Precision	Recall
-Baseline (Zero-shot)	45.2%	    0.43	    0.41	    0.45
-Fine-tuned Gemma-4B	    78.6%	    0.77	    0.79	    0.76
+## 📈 Results
+### Performance Metrics
+| Model | Accuracy	| F1-Score |	Precision |	Recall |
+|-------|-----------|----------|------------|--------|
+| Baseline (Zero-shot) | 75% | 0.74 | 0.75 | 0.75 |
+| Fine-tuned Gemma-4B | 87.1% | 0.87 | 0.88 | 0.87 |
 
 
-# 👨‍💻 Author
-## Your Name
+## 👨‍💻 Author
+### Abhishek Thakkar
 - GitHub: <a href='https://github.com/Heyabhi510'>Heyabhi510</a>
-- LinkedIn: <a href='www.linkedin.com/in/abhi-s-thakkar'>Abhishek Thakkar</a>
+- LinkedIn: <a href='https://www.linkedin.com/in/abhi-s-thakkar'>Abhishek Thakkar</a>
 
 
 # 🙏 Acknowledgments
 - HuggingFace for the <a href='https://github.com/huggingface/transformers'>Transformers</a> and <a href='https://github.com/huggingface/peft'>PEFT</a> libraries
 - Google for releasing <a href='https://huggingface.co/google/gemma-3-4b-it'>Gemma models</a>
-- <a href='https://www.researchgate.net/publication/251231364_FinancialPhraseBank-v10'>Financial PhraseBank</a> dataset creators
+- <a href='https://www.kaggle.com/datasets/ankurzing/sentiment-analysis-for-financial-news'>Financial PhraseBank</a> dataset creators
