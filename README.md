@@ -106,9 +106,10 @@ python src/scripts/train_model.py
 
 ## 📈 Results
 ### Performance Metrics
-Model	                Accuracy	F1-Score	Precision	Recall
-Baseline (Zero-shot)	45.2%	    0.43	    0.41	    0.45
-Fine-tuned Gemma-4B	    78.6%	    0.77	    0.79	    0.76
+| Model | Accuracy	| F1-Score |	Precision	Recall |
+|-------|-----------|----------|-------------------|
+| Baseline (Zero-shot) |	45.2% | 0.43 | 0.41 | 0.45 |
+| Fine-tuned Gemma-4B | 78.6% | 0.77 | 0.79 | 0.76 |
 
 
 ## 👨‍💻 Author
