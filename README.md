@@ -39,22 +39,22 @@ FINANCIAL NEWS LLM FINE-TUNING/
 | **Root** | README.md | Project documentation |
 
 
-# 🚀 How to Run
-## Clone repository
+## 🚀 How to Run
+### Clone repository
 git clone https://github.com/Heyabhi510/Financial-News-LLM-Fine-Tuning.git
 cd Financial-News-LLM-Fine-Tuning
 
-## Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-## Setup Hugging Face token
+### Setup Hugging Face token
 export HF_Token="your_huggingface_token"
 
-## Run the complete training pipeline
+### Run the complete training pipeline
 python src/scripts/train_model.py
 
 
-# 📦 Requirements
+## 📦 Requirements
 - torch>=2.0.0
 - transformers>=4.35.0
 - datasets>=2.14.0
@@ -70,49 +70,49 @@ python src/scripts/train_model.py
 - flash-attn>=2.0.0
 
 
-# 🚀 Performance Optimizations
-## Memory Efficiency
+## 🚀 Performance Optimizations
+### Memory Efficiency
 - 4-bit QLoRA: Reduces memory usage by 60%
 - Gradient Checkpointing: Trading compute for memory
 - Flash Attention 2: Faster attention computation
 - BF16 Precision: Better numerical stability
 
-## Training Speed
+### Training Speed
 - Paged AdamW 8-bit: Memory-efficient optimizer
 - Gradient Accumulation: Effective larger batches
 - Mixed Precision: BF16 training
 
 
-# 🔧 Technical Details
-## Model Architecture
+## 🔧 Technical Details
+### Model Architecture
 - Base Model: Google Gemma-4B
 - Fine-tuning Method: 4-bit QLoRA
 - Adapter Rank: 64
 - Target Modules: q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj
 
-## Training Configuration
+### Training Configuration
 - Batch Size: 8 (with gradient accumulation)
 - Learning Rate: 2e-4 (with cosine scheduler)
 - Epochs: 5
 - Max Sequence Length: 2048 tokens
 - Warmup Ratio: 0.03
 
-## Dataset
+### Dataset
 - Source: Financial PhraseBank
 - Size: 5,000 labeled samples
 - Classes: Positive, Negative, Neutral
 - Train/Val/Test Split per class: 300/50/300
 
 
-# 📈 Results
-## Performance Metrics
+## 📈 Results
+### Performance Metrics
 Model	                Accuracy	F1-Score	Precision	Recall
 Baseline (Zero-shot)	45.2%	    0.43	    0.41	    0.45
 Fine-tuned Gemma-4B	    78.6%	    0.77	    0.79	    0.76
 
 
-# 👨‍💻 Author
-## Your Name
+## 👨‍💻 Author
+### Your Name
 - GitHub: <a href='https://github.com/Heyabhi510'>Heyabhi510</a>
 - LinkedIn: <a href='www.linkedin.com/in/abhi-s-thakkar'>Abhishek Thakkar</a>
 
