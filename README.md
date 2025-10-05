@@ -1,6 +1,6 @@
 # 🏦 Financial News Sentiment Analysis with Gemma-3-4B
 
-> Fine-tuning Google's Gemma-3-4B model for financial sentiment classification using **QLoRA (4-bit Quantized LoRA)** - achieving **77% accuracy** with only **0.2% trainable parameters**.
+> Fine-tuning Google's Gemma-3-4B model for financial sentiment classification using **QLoRA (4-bit Quantized LoRA)** - achieving **87.1% accuracy** with only **0.2% trainable parameters**.
 
 
 ## 📊 Project Overview
@@ -106,10 +106,10 @@ python src/scripts/train_model.py
 
 ## 📈 Results
 ### Performance Metrics
-| Model | Accuracy	| F1-Score |	Precision	Recall |
-|-------|-----------|----------|-------------------|
-| Baseline (Zero-shot) |	45.2% | 0.43 | 0.41 | 0.45 |
-| Fine-tuned Gemma-4B | 78.6% | 0.77 | 0.79 | 0.76 |
+| Model | Accuracy	| F1-Score |	Precision |	Recall |
+|-------|-----------|----------|------------|--------|
+| Baseline (Zero-shot) | 75% | 0.74 | 0.75 | 0.75 |
+| Fine-tuned Gemma-4B | 87.1% | 0.87 | 0.88 | 0.87 |
 
 
 ## 👨‍💻 Author
