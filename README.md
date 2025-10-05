@@ -5,7 +5,7 @@
 
 ## 📊 Project Overview
 
-This project demonstrates **end-to-end fine-tuning** of a large language model (Gemma-3B) for financial domain adaptation. The model is trained to analyze sentiment in financial news articles and classify them as **Positive, Negative, or Neutral**.
+This project demonstrates **end-to-end fine-tuning** of a large language model (Gemma-4B) for financial domain adaptation. The model is trained to analyze sentiment in financial news articles and classify them as **Positive, Negative, or Neutral**.
 
 
 ### 🎯 Key Features
