@@ -17,30 +17,26 @@ This project demonstrates **end-to-end fine-tuning** of a large language model (
 
 
 ## 📁 Project Structure
-FINANCIAL NEWS LLM FINE-TUNING
-├── src/
-│ ├── config/ # Configuration management
-│ │ ├── hyperparameters.py # Training parameters
-│ │ └── paths.py # File paths
-│ ├── data/ # Data processing
-│ │ ├── loader.py # Data loading & validation
-│ │ ├── preprocessor.py # Prompt engineering
-│ │ └── splitter.py # Train/test splitting
-│ ├── models/ # Model architecture
-│ │ ├── setup.py # Model & tokenizer initialization
-│ │ └── lora_config.py # LoRA configuration
-│ ├── training/ # Training pipeline
-│ │ └── train.py # Training configuration
-│ ├── evaluation/ # Model evaluation
-│ │ ├── metrics.py # Performance metrics
-│ │ └── predictor.py # Inference functions
-│ ├── scripts/ # Execution scripts
-│ │ └── train_model.py # Main training script
-│ └── outputs/ # Generated artifacts
-│ └── predictions/ # Prediction results
-│ └── trained_models/# Saved model weights
-├── requirements.txt # Dependencies
-└── README.md
+FINANCIAL NEWS LLM FINE-TUNING/
+| Directory | File | Description |
+|-----------|------|-------------|
+| **src/** | | **Source Code Root** |
+| src/config/ | hyperparameters.py | Training parameters and configurations |
+| src/config/ | paths.py | File paths and directory management |
+| src/data/ | loader.py | Data loading, validation, and preprocessing |
+| src/data/ | preprocessor.py | Text cleaning and prompt engineering |
+| src/data/ | splitter.py | Train/validation/test data splitting |
+| src/models/ | setup.py | Model and tokenizer initialization |
+| src/models/ | lora_config.py | LoRA configuration and adapter setup |
+| src/training/ | train.py | Training loop and configuration |
+| src/evaluation/ | metrics.py | Performance metrics and evaluation |
+| src/evaluation/ | predictor.py | Inference and prediction functions |
+| src/scripts/ | train_model.py | Main training execution script |
+| src/outputs/ | | **Generated Artifacts** |
+| src/outputs/predictions/ | | Model prediction results |
+| src/outputs/predictions/trained_models/ | | Saved model weights and checkpoints |
+| **Root** | requirements.txt | Python dependencies |
+| **Root** | README.md | Project documentation |
 
 
 # 🚀 How to Run
