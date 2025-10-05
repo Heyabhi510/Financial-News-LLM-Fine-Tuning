@@ -1,7 +1,7 @@
 from pathlib import Path
 
 class Paths:
-    ROOT = Path("/content/Financial-News-LLM-Fine-Tuning")
+    ROOT = Path("/content/Financial-News-LLM-Fine-Tuning/src")
     DATA = ROOT / "data"
     MODELS = ROOT / "models"
     OUTPUTS = ROOT / "outputs"
