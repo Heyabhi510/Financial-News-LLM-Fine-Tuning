@@ -48,7 +48,7 @@ cd Financial-News-LLM-Fine-Tuning
 pip install -r requirements.txt
 
 ### 3) Setup Hugging Face token
-export HF_Token="your_huggingface_token"
+export HF_Token="your_huggingface_token" (add in Google colab's secrets and store in environment variable)
 
 ### 4) Run the complete training pipeline
 python src/scripts/train_model.py
