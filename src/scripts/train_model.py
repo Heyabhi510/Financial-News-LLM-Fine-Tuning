@@ -76,8 +76,7 @@ def main():
         plt.show()
 
         # tensorboard
-        %load_ext tensorboard
-        %tensorboard --logdir str(paths.TRAINED_MODEL)/runs
+        print(f"tensorboard --logdir {paths.TRAINED_MODEL}/runs")
         
         # 7. Evaluate model
         predictor = SentimentPredictor(model, tokenizer)
