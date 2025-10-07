@@ -48,7 +48,7 @@ cd Financial-News-LLM-Fine-Tuning
 pip install -r requirements.txt
 
 ### 3) Setup Hugging Face token
-export HF_Token="your_huggingface_token"
+export HF_Token="your_huggingface_token" (add in Google colab's secrets and store in environment variable)
 
 ### 4) Run the complete training pipeline
 python src/scripts/train_model.py
@@ -98,7 +98,7 @@ python src/scripts/train_model.py
 - Warmup Ratio: 0.03
 
 ### Dataset
-- Source: Financial PhraseBank
+- Source: <a href='https://www.kaggle.com/datasets/ankurzing/sentiment-analysis-for-financial-news'>Financial PhraseBank</a>
 - Size: 5,000 labeled samples
 - Classes: Positive, Negative, Neutral
 - Train/Val/Test Split per class: 300/50/300
