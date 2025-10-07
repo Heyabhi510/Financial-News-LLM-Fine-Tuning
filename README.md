@@ -32,9 +32,8 @@ FINANCIAL-NEWS-LLM-FINE-TUNING/
 | src/evaluation/ | metrics.py | Performance metrics and evaluation |
 | src/evaluation/ | predictor.py | Inference and prediction functions |
 | src/scripts/ | train_model.py | Main training execution script |
-| src/outputs/ | | **Generated Artifacts** |
-| src/outputs/predictions/ | | Model prediction results |
-| src/outputs/predictions/trained_models/ | | Saved model weights and checkpoints |
+| src/outputs/test_predictions.csv/ | | Model prediction results |
+| src/predictions/trained_models/ | | Saved model weights and checkpoints |
 | **Root** | requirements.txt | Python dependencies |
 | **Root** | README.md | Project documentation |
 
@@ -75,12 +74,10 @@ python src/scripts/train_model.py
 - 4-bit QLoRA: Reduces memory usage by 60%
 - Gradient Checkpointing: Trading compute for memory
 - Flash Attention 2: Faster attention computation
-- BF16 Precision: Better numerical stability
 
 ### Training Speed
 - Paged AdamW 8-bit: Memory-efficient optimizer
 - Gradient Accumulation: Effective larger batches
-- Mixed Precision: BF16 training
 
 
 ## 🔧 Technical Details
