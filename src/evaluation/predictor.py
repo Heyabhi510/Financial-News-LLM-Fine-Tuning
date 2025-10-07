@@ -13,9 +13,12 @@ class SentimentPredictor:
         y_pred = []
         # Convert DataFrame column to a list of prompts
         prompts = X_test["text"].tolist()
+
+        # Set batch size depending on GPU memory
+        batch_size = 8
         
-        for i in tqdm(range(0, len(prompts), config.BATCH_SIZE)):
-            batch = prompts[i:i + config.BATCH_SIZE]
+        for i in tqdm(range(0, len(prompts), batch_size)):
+            batch = prompts[i:i + batch_size]
             inputs = self.tokenizer(
                 batch, return_tensors="pt", padding=True, 
                 truncation=True, max_length=config.MAX_SEQ_LENGTH
@@ -26,6 +29,8 @@ class SentimentPredictor:
                 # Set a higher max_new_tokens to ensure the model can generate full words
                 max_new_tokens=10,
                 do_sample=False,  # Use greedy decoding for deterministic output
+                top_p=1.0,
+                top_k=50,
                 pad_token_id=self.tokenizer.eos_token_id
             )
             

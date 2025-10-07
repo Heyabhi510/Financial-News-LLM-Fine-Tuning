@@ -15,9 +15,9 @@ class ModelSetup:
 
         if bnb_config:
             print("🔢 Using 4-bit quantization with bitsandbytes")
-            print(f"   - Quant Type: {config.BNB_4BIT_QUANT_TYPE}")
-            print(f"   - Compute Dtype: {config.BNB_4BIT_COMPUTE_DTYPE}")
-            print(f"   - Double Quant: {config.BNB_4BIT_USE_DOUBLE_QUANT}")
+            print(f"- Quant Type: {config.BNB_4BIT_QUANT_TYPE}")
+            print(f"- Compute Dtype: {config.BNB_4BIT_COMPUTE_DTYPE}")
+            print(f"- Double Quant: {config.BNB_4BIT_USE_DOUBLE_QUANT}")
         else:
             print("⚠️  Running without quantization")
         
@@ -25,7 +25,7 @@ class ModelSetup:
         try:
             model = AutoModelForCausalLM.from_pretrained(
                 config.MODEL_NAME,
-                dtype="auto",
+                dtype="auto", # Automatically uses bfloat16 on compatible GPUs
                 device_map="auto",
                 attn_implementation=attn_implementation,
                 token=self.hf_token
@@ -49,14 +49,20 @@ class ModelSetup:
                 token=self.hf_token
             )
     
-    def setup_tokenizer(self):
+    def setup_tokenizer(self, model):
         tokenizer = AutoTokenizer.from_pretrained(
             config.MODEL_NAME, 
             max_length=config.MAX_SEQ_LENGTH
         )
         
         # Tokenizer configuration
+        # We use the end-of-sequence token as the padding token.
+        # Padding on the left is a common practice for decoder-only models.
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.padding_side = "left"
+        model.config.pad_token_id = tokenizer.pad_token_id
+        model.generation_config.pad_token_id = tokenizer.pad_token_id
+        model.config.bos_token_id = tokenizer.bos_token_id
+        model.generation_config.bos_token_id = tokenizer.bos_token_id
         
-        return tokenizer
+        return tokenizer, model

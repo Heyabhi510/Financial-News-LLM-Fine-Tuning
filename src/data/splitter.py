@@ -16,22 +16,22 @@ class DataSplitter:
                 sentiment_data,
                 train_size=config.TRAIN_SAMPLES_PER_CLASS,
                 test_size=config.TEST_SAMPLES_PER_CLASS,
-                random_state=config.SEED
+                random_state=42
             )
             X_train.append(train)
             X_test.append(test)
         
         # Concatenate and shuffle the training data
-        X_train = pd.concat(X_train).sample(frac=1, random_state=config.SEED)
+        X_train = pd.concat(X_train).sample(frac=1, random_state=config.RANDOM_STATE)
         X_test = pd.concat(X_test)
         
         # Create a balanced evaluation set from the remaining data
         eval_index = [index for index in df.index if index not in 
-                   list(X_train.index) + list(X_test.index)]
+                   list(train.index) + list(test.index)]
         X_eval = df[df.index.isin(eval_index)]
         X_eval = (X_eval.groupby('sentiment', group_keys=False)
                   .apply(lambda x: x.sample(n=config.EVAL_SAMPLES_PER_CLASS, 
-                                          random_state=config.SEED, 
+                                          random_state=config.RANDOM_STATE, 
                                           replace=True)))
-        
+        X_train = X_train.reset_index(drop=True)
         return X_train, X_test, X_eval

@@ -20,8 +20,7 @@ class Hyperparameters:
     LORA_DROPOUT = 0
     LORA_TARGET_MODULES = [
         "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj"
-    ]
+        "gate_proj", "up_proj", "down_proj"]
     
     # Training config
     SEED = 0
@@ -29,8 +28,10 @@ class Hyperparameters:
     LEARNING_RATE = 2e-4
     BATCH_SIZE = 1
     GRAD_ACCUM_STEPS = 8
+    WEIGHT_DECAY = 0.001
     WARMUP_RATIO = 0.03
     MAX_GRAD_NORM = 0.3
+    RANDOM_STATE = 10
     
     # Data config
     TRAIN_SAMPLES_PER_CLASS = 300
